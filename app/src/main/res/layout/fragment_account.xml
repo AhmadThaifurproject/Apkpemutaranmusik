@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1c1c1c"
+    tools:context=".AccountActivity">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <!-- Tambahkan ikon burger (garis tiga) di sini -->
+
+    <ImageView
+        android:id="@+id/burgerIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end|right"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+
+        android:contentDescription="burgerIcon"
+        android:src="@drawable/baseline_view_list_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profileImage"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/baseline_account_circle_24"
+        app:tint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+
+    <TextView
+        android:id="@+id/usernameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/profileImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/editProfileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        app:layout_constraintTop_toBottomOf="@+id/usernameTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/followersTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100  Follower"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileButton"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="96dp"/>
+
+    <TextView
+        android:id="@+id/followingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="50  Following"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileButton"
+        app:layout_constraintStart_toEndOf="@+id/followersTextView"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="50dp"/>
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".YourActivity">
+
+        <!-- Main Content -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Your existing content goes here -->
+
+        </RelativeLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"/> <!-- Buat sumber menu untuk item drawer Anda -->
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+    <!-- Tambahkan bagian lainnya seperti jumlah video, bio, dll. di sini -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
